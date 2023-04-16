@@ -3,8 +3,8 @@ on:
     branches:
     - main
     - feature/*
-      on:
-      pull_request:
+    on:
+  pull_request:
     branches:
     - main
     on:
@@ -14,7 +14,7 @@ on:
     name: deploy to staging
     runs-on: ubuntu-18.04
     jobs:
-  my_first_job:
+    my_first_job:
     steps:
       - name: My first step
         # Uses the default branch of a public repository
