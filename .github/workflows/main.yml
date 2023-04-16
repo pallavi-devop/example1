@@ -1,0 +1,34 @@
+on:
+  push:
+    branches:
+    - main
+    - feature/*
+      on:
+      pull_request:
+    branches:
+    - main
+    on:
+  workflow_dispatch:
+  jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-18.04
+    jobs:
+  my_first_job:
+    steps:
+      - name: My first step
+        # Uses the default branch of a public repository
+        uses: pallavi-devop/example1@main
+      - name: My second step
+        # Uses a specific version tag of a public repository
+        uses: pallavi-devop/example1@v2.0.1
+        
+      - name: Install Dependencies
+        run: npm install
+        steps:
+      - run: npm publish
+        if: github.event_name == 'push'
+   
+    
+
+    
